@@ -112,6 +112,6 @@ def selected_skills_test2():
             exploitation_skills = df.sample(n = nb_exploitation, weights= "weight_sample").skill
             
             skills = exploitation_skills.append(exploration_skills)
-        return skills.reset_index(drop = True).to_json(), job_title
+        return skills.reset_index(drop = True).to_json()
 if __name__ == '__main__':
    app.run(host='127.0.0.1', port=8080, debug=True)

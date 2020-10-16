@@ -66,7 +66,7 @@ spacy.prefer_gpu()
 nlp = fr_core_news_lg.load()
 
 word_list = list(top_skills_fr.job_title.unique())
-pipe = nlp.pipe(word_list)
+pipe = list(nlp.pipe(word_list))
 
 
 def get_top_similarities_fr(word):

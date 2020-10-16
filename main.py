@@ -65,10 +65,11 @@ def job_title_match_fuzzy(job_searched, threshold = 90):
 spacy.prefer_gpu()
 nlp = fr_core_news_lg.load()
 
+word_list = list(top_skills_fr.job_title.unique())
 pipe = nlp.pipe(word_list)
 
+
 def get_top_similarities_fr(word):
-    word_list = list(top_skills_fr.job_title.unique())
     similarities = {}
     doc1 = nlp(str(word))
     for i,item in enumerate(pipe):

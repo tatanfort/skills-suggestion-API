@@ -59,11 +59,13 @@ def job_title_match_fuzzy(job_searched, threshold = 90):
         
 
 #french
-pipe = nlp.pipe(word_list)
+
 
 #job_titles_ROME = pd.read_pickle("job_titles_ROME.pkl")  
 spacy.prefer_gpu()
 nlp = fr_core_news_lg.load()
+
+pipe = nlp.pipe(word_list)
 
 def get_top_similarities_fr(word):
     word_list = list(top_skills_fr.job_title.unique())
